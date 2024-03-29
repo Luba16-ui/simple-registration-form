@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f2f2f2;
+    }
+    form {
+      width: 300px;
+      background-color: white;
+      border-radius: 5px;
+      padding: 20px;
+      box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+    }
+    form label {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 16px;
+    }
+    form input[type="text"], form input[type="email"]{
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      margin-bottom: 10px;
+    }
+    form input[type="password"] {
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      margin-bottom: 10px;
+    }
+    form input[type="password-confirm"] {
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      margin-bottom: 10px;
+    }
+    form input[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    form input[type="submit"]:hover {
+      background-color: #0069d9;
+    }
+    form img {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin-bottom: 10px;
+    }
+    p#error-message {
+      color: red;
+      margin-bottom: 10px;
+    }
+.form-section {
+      margin-top: 20px;
+      vertical-align:bottom;
+    }
+    .form-section h2 {
+      margin-bottom: 5px;
+      vertical-align:bottom;
+    }
+  </style>
+</head>
+<body>
+<div class="form-section">
+  <img src="C:\Users\Pranava Sai\Desktop\New folder\glo.jpg" alt="Image" style="position: absolute; left: 80px; top: 300px;">
+  <form style= "position: absolute; right: 80px; top: 300px;">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+    <br>
+    <label for="rollno">Rollno:</label>
+    <input type="text" id="rollno" name="rollno" required>
+    <br>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+    <br>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required oninput="validateConfirmPassword()">
+    <br>
+    <label for="password-confirm">Confirm Password:</label>
+    <input type="password" id="password-confirm" name="password-confirm" required>
+    <br>
+    <p id="error-message"></p>
+    <br>
+    <input type="submit" value="Register">
+    </form>
+     </div>
+  <div class="form-section" style= "position: absolute; bottom: 10px" >
+    <h2>Home</h2>
+    <p>Welcome to our college website! We provide high-quality eduction with proper resources and highly certified faculty. Contact us today to learn more.</p>
+  </div>
+  <div class="form-section" style= "position: absolute;">
+    <h2>About Us</h2>
+    <p>We are a outperforming college in the Hyderabad with a team of experienced professionals. We strive to provide the best education to the students. Contact us our college administration .</p>
+  </div>
+  <div class="form-section" style= "position: relative;">
+    <h2>Contact Us</h2>
+    <p>Email us at <a href="mailto:griet@college.com">griet@college.com</a> or call us at +91-9988776698.</p>
+  </div>
+  </div>
+    <script>
+      function validateConfirmPassword() {
+        var password = document.getElementById("password").value;
+        var confirmPassword = document.getElementById("password-confirm").value;
+
+        if (password != "" && confirmPassword != "") {
+          if (password !== confirmPassword) {
+            document.getElementById("error-message").innerHTML = "Passwords do not match!";
+          } else {
+            document.getElementById("error-message").innerHTML = "";
+          }
+        }
+      }
+    </script>
+</body>
+</html>
